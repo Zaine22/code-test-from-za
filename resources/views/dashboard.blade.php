@@ -1,5 +1,21 @@
 <x-admin-layout>
-    <h3 class="text-center">Companies</h3>
+    <div class="row g-0">
+        <div class="col-10 d-flex justify-content-center">
+            <h3 class="">Companies</h3>
+        </div>
+        <div class="col-2 d-flex justify-content-end">
+            <form
+                action="{{ route("logout") }}"
+                method="post"
+            >
+                @csrf
+                <button
+                    type="submit"
+                    class="btn btn-danger"
+                >Logout</button>
+            </form>
+        </div>
+    </div>
     <x-card-wrapper>
         <div class="row">
             @forelse ($companies as $company)
